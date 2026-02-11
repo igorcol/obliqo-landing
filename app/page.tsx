@@ -1,14 +1,26 @@
 export default function Home() {
   return (
-    <main className="relative w-full h-screen flex items-center justify-center overflow-hidden bg-obliqo-black">
-      <div className="text-center">
-        <h1 className="text-6xl font-bold tracking-tighter text-white uppercase mb-2">
-          Obliqo
+    <main className="w-full min-h-screen flex flex-col items-center justify-center relative z-10">
+      {/* Seção 1 */}
+      <section className="h-screen w-full flex items-center justify-center border-b border-obliqo-gray/20">
+        <h1 className="text-8xl font-black tracking-tighter uppercase text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-800">
+          OBLIQO
         </h1>
-        <p className="text-obliqo-cyan tracking-[0.5em] text-sm animate-pulse">
-          EM BREVE
+      </section>
+      
+      {/* Seção 2 - Teste de Altura */}
+      <section className="h-[150vh] w-full flex items-center justify-center bg-obliqo-gray/5">
+        <p className="text-obliqo-cyan font-mono text-xl animate-pulse">
+          KEEP SCROLLING /// TESTING INERTIA
         </p>
-      </div>
+      </section>
+
+      {/* Seção 3 */}
+      <section className="h-screen w-full flex items-center justify-center border-t border-obliqo-gray/20">
+        <h2 className="text-6xl font-bold text-obliqo-red">
+          END OF SIGNAL
+        </h2>
+      </section>
     </main>
   );
 }
