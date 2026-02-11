@@ -58,7 +58,7 @@ export default function NoiseBackground() {
   });
 
   return (
-    <mesh ref={meshRef} scale={[100, 100, 1]}>
+    <mesh ref={meshRef} scale={[100, 100, 1]} position={[0, 0, -5]}>
       <planeGeometry args={[2, 2]} />
       <shaderMaterial
         vertexShader={vertexShader}
