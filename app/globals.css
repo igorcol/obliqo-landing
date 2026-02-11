@@ -10,6 +10,13 @@
   --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
 }
 
+@layer utilities {
+  /* Gradiente Radial para a Hero */
+  .bg-radial-gradient {
+    background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.8) 100%);
+  }
+}
+
 :root {
   --background: #000000;
   --foreground: #ececec;
@@ -66,4 +73,20 @@ html.lenis, html.lenis body {
 .stroke-text:hover {
   -webkit-text-stroke: 0px transparent;
   color: #FF0000; /* Vira vermelho sólido no hover */
+}
+
+/* Tipografia Brutalista */
+h1 {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Animação do logo rastro */
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
 }
