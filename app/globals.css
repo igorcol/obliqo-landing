@@ -1,26 +1,37 @@
 @import "tailwindcss";
 
+/* --- DEFINIÇÃO DO TEMA (Substitui o tailwind.config.ts) --- */
+@theme {
+  /* Cores Personalizadas OBLIQO */
+  --color-obliqo-black: #050505;
+  --color-obliqo-red: #FF0000;
+  --color-obliqo-cyan: #00FFFF;
+  --color-obliqo-gray: #1A1A1A;
+  
+  /* Fontes (mantendo as variáveis do Next.js se quiser usar depois) */
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
+}
+
+/* --- VARIÁVEIS GLOBAIS --- */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #000000;
+  --foreground: #ececec;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* --- RESET & BASE STYLES --- */
+html,
 body {
-  background: var(--background);
+  height: 100%;
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden; /* Vital para evitar scroll horizontal indesejado */
+  -webkit-font-smoothing: antialiased; /* Renderização de fonte mais nítida (Mac/iOS) */
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Esconder a barra de rolagem padrão (Estética App-Like) */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
 }
