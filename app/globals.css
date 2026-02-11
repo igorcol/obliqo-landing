@@ -56,3 +56,14 @@ html.lenis, html.lenis body {
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
 }
+
+/* Efeito de texto com borda (Outline) */
+.stroke-text {
+  -webkit-text-stroke: 1px #fff; /* Borda branca fina */
+  color: transparent; /* Miolo transparente */
+}
+
+.stroke-text:hover {
+  -webkit-text-stroke: 0px transparent;
+  color: #FF0000; /* Vira vermelho sólido no hover */
+}
