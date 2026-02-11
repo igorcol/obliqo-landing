@@ -10,45 +10,31 @@ export default function HeroText() {
 
   useFrame((state) => {
     if (textRef.current) {
-      // Pega a posição do mouse (vai de -1 a 1)
       const { x, y } = state.pointer;
-
-      // Faz o texto girar levemente na direção do mouse
-      // Lerp (Linear Interpolation) deixa o movimento suave
-      textRef.current.rotation.x = THREE.MathUtils.lerp(
-        textRef.current.rotation.x,
-        -y * 0.1, // Intensidade da rotação vertical
-        0.1
-      );
-      textRef.current.rotation.y = THREE.MathUtils.lerp(
-        textRef.current.rotation.y,
-        x * 0.1, // Intensidade da rotação horizontal
-        0.1
-      );
+      // Movimento sutil mantido
+      textRef.current.rotation.x = THREE.MathUtils.lerp(textRef.current.rotation.x, -y * 0.1, 0.05);
+      textRef.current.rotation.y = THREE.MathUtils.lerp(textRef.current.rotation.y, x * 0.1, 0.05);
     }
   });
 
   return (
-    // Float faz o texto flutuar suavemente (efeito de respiração)
-    <Float speed={2} rotationIntensity={0.5} floatIntensity={0.5}>
+    <Float speed={2} rotationIntensity={0.1} floatIntensity={0.1}>
       <Text
         ref={textRef}
-        fontSize={1.5} // Tamanho gigante
-        letterSpacing={-0.05} // Tracking apertado (estilo brutalista)
-        //font="https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuFuYAZ9hjp-Ek-_EeA.ttf" // Vamos usar uma fonte padrão do sistema por enquanto ou carregar uma
-        color="white"
+        fontSize={2.5} // Um pouco maior para compensar a falta de brilho
+        fontWeight="bold" // Fonte grossa padrão do sistema
+        letterSpacing={-0.02} // Tracking um pouco mais solto para fonte padrão
         position={[0, 0, 0]}
         anchorX="center"
         anchorY="middle"
+        // Nenhuma prop 'font' = usa a padrão do sistema
       >
         OBLIQO
-        {/* Material do Texto: Uma mistura de metal e emissão de luz */}
-        <meshStandardMaterial
-          color="white"
-          emissive="#ffffff" // Brilho interno
-          emissiveIntensity={0.5}
-          roughness={0.4} // Levemente fosco
-          metalness={0.8} // Metálico
+        
+        {/* MATERIAL BÁSICO: Cor chapada, sem reação à luz, sem brilho */}
+        <meshBasicMaterial
+          color="#FF0000"
+          toneMapped={false}
         />
       </Text>
     </Float>
