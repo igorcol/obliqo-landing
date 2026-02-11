@@ -3,7 +3,7 @@ export default function Home() {
     <main className="w-full min-h-screen flex flex-col items-center justify-center relative z-10">
       {/* Seção 1 */}
       <section className="h-screen w-full flex items-center justify-center border-b border-obliqo-gray/20">
-        <h1 className="text-8xl font-black tracking-tighter uppercase text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-800">
+        <h1 className="text-8xl font-black tracking-tighter uppercase text-transparent bg-clip-text bg-linear-to-b from-white to-gray-800">
           OBLIQO
         </h1>
       </section>

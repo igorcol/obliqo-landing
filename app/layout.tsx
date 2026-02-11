@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import SmoothScroll from "@/components/ui/SmoothScroll";
+import Scene from "@/components/canvas/Scene";
 
 // Configuração das fontes
 const geistSans = Geist({
@@ -34,7 +35,10 @@ export default function RootLayout({
           "antialiased bg-obliqo-black text-white selection:bg-obliqo-red selection:text-black"
         )}
       >
-        {/* Envolvemos tudo com o Smooth Scroll */}
+        {/* O Canvas fica fixo no fundo */}
+        <Scene /> 
+        
+        {/* O Conteúdo rola por cima */}
         <SmoothScroll>
           {children}
         </SmoothScroll>
