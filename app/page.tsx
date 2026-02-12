@@ -4,204 +4,192 @@ export default function Home() {
   return (
     <main className="relative w-full min-h-screen z-10 text-white selection:bg-obliqo-red selection:text-black bg-black overflow-x-hidden">
       
-      {/* --- HERO SECTION --- */}
-      <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
+      {/* --- HERO: THE MONOLITH --- */}
+      <section className="relative h-[110vh] w-full flex items-center justify-center overflow-hidden border-b border-white/5">
         <div className="absolute inset-0 z-0">
           <Image 
             src="/textures/ceiling-lights.jpg" 
             alt="Obliqo Atmosphere"
             fill
-            className="object-cover opacity-30 grayscale contrast-150"
+            className="object-cover opacity-20 grayscale contrast-150 scale-110 hover:scale-100 transition-transform duration-[10s]"
             priority
           />
-          <div className="absolute inset-0 bg-black/40 bg-radial-gradient"></div>
+          <div className="absolute inset-0 bg-black/60 bg-radial-gradient"></div>
         </div>
 
+        {/* Overlay de Noise Dinâmico */}
         <div className="absolute inset-0 z-10 pointer-events-none opacity-[0.03] noise-animation"></div>
 
+        {/* Identidade Central Refinada */}
         <div className="relative z-20 flex flex-col items-center">
-          <span className="text-obliqo-red text-4xl mb-4 animate-pulse">✱</span>
-          <h1 className="text-[18vw] md:text-[15vw] font-bold tracking-tighter leading-none relative group cursor-default">
-            <span className="relative z-10">OBLIQO</span>
-            <span className="absolute inset-0 text-obliqo-red translate-x-1 translate-y-1 -z-10 opacity-70">
-              OBLIQO
-            </span>
+          <div className="mb-8 flex flex-col items-center group">
+             <span className="text-obliqo-red text-6xl animate-spin-slow cursor-wait">✱</span>
+             <div className="h-px w-0 group-hover:w-24 bg-obliqo-red transition-all duration-700 mt-4"></div>
+          </div>
+          
+          <h1 className="text-[20vw] md:text-[16vw] font-bold tracking-tighter leading-none relative mix-blend-difference">
+            OBLIQO
           </h1>
 
-          <div className="mt-4 flex flex-col items-center gap-2">
-            <span className="text-[10px] font-mono tracking-[0.4em] text-zinc-400 uppercase">
+          <div className="mt-6 flex flex-col items-center gap-4">
+            <p className="text-[9px] font-mono tracking-[0.6em] text-obliqo-red uppercase bg-white/5 px-4 py-1 backdrop-blur-sm">
               tilting humans. tilting visions. tilting perspectives.
-            </span>
+            </p>
           </div>
         </div>
 
-        <div className="absolute inset-0 z-30 flex flex-col justify-between p-6 md:p-12 pointer-events-none">
-          <div className="flex justify-between items-start uppercase text-[10px] font-mono tracking-widest opacity-60">
-            <div className="flex flex-col gap-1">
-              <span>✱ CULTURAL CENTER</span>
-              <span>EST. 2023 // SOROCABA</span>
+        {/* UI Elements - Fixed positions */}
+        <div className="absolute inset-0 z-30 flex flex-col justify-between p-8 md:p-12 pointer-events-none font-mono text-[9px] tracking-[0.4em] opacity-40">
+          <div className="flex justify-between items-start uppercase">
+            <div className="space-y-1">
+              <p>✱ NIGHTCLUB & CULTURAL CENTER</p>
+              <p>SOROCABA // BRAZIL</p>
             </div>
-            <div className="text-right flex flex-col gap-1">
-              <span>FOUNDED BY MOCHAKK</span>
-              <span>UNDERGROUND RESEARCH</span>
-            </div>
-          </div>
-          <div className="flex justify-between items-end pointer-events-auto">
-            <div className="text-[10px] font-mono tracking-widest animate-bounce text-obliqo-red">
-              /// SCROLL TO ENTER ARCHIVE
-            </div>
-            <div className="text-[10px] font-mono opacity-50 text-right">
-              SOUND SYSTEM: 4VIAS ACTIVE <br/> VISUALS: BRUTALIST
+            <div className="text-right space-y-1 text-obliqo-red">
+              <p>INTERNAL_ARCHIVE_2026</p>
+              <p>STATUS: DEPLOYED</p>
             </div>
           </div>
         </div>
       </section>
 
-      <div className="relative bg-black z-20 border-t border-white/10">
-        <div className="container mx-auto max-w-[1400px] border-x border-white/10">
+      {/* --- CONTENT CONTAINER --- */}
+      <div className="relative bg-black z-20">
+        
+        {/* GRID DE CAPÍTULOS */}
+        <div className="container mx-auto max-w-[1500px] border-x border-white/5">
 
-          {/* 01 /// O MANIFESTO */}
-          <section className="grid grid-cols-1 md:grid-cols-12 border-b border-white/10">
-            <div className="md:col-span-5 p-8 md:p-12 border-b md:border-b-0 md:border-r border-white/10 relative">
-              <div className="sticky top-12">
-                <span className="text-obliqo-red font-mono text-xs tracking-widest mb-4 block">01 /// THE VISION</span>
-                <h2 className="text-5xl md:text-7xl font-bold uppercase leading-[0.9] tracking-tighter mb-8">
-                  A New <br/> Perspective
-                </h2>
-                <p className="text-zinc-500 font-mono text-xs leading-relaxed uppercase">
-                  O nome OBLIQO remete ao olhar fora do comum. Uma proposta de visão alternativa para a música e a arte.
-                </p>
-              </div>
-            </div>
-            
-            <div className="md:col-span-7 p-8 md:p-24 bg-zinc-950/50">
-              <p className="text-2xl md:text-3xl leading-tight text-zinc-200 font-light mb-12">
-                Idealizado por <strong className="text-white">Mochakk</strong>, o OBLIQO nasce para celebrar, educar e inspirar a comunidade local.
-              </p>
-              <div className="space-y-6 text-zinc-400 font-mono text-sm leading-relaxed text-justify">
-                <p>
-                  Mais do que um club, somos um centro cultural. Um espaço onde a velha guarda e a nova geração se encontram para reviver a história da música eletrônica em Sorocaba.
-                </p>
-                <p>
-                  Através de workshops com veteranos da indústria e exposições mensais, conectamos artistas e público, transformando a região em um ponto vital da rota global.
-                </p>
-              </div>
-            </div>
-          </section>
-
-          {/* 02 /// SOUND SYSTEM SEÇÃO TÉCNICA */}
-          <section className="grid grid-cols-1 md:grid-cols-12 border-b border-white/10 bg-obliqo-red text-black">
-            <div className="md:col-span-12 p-12 flex flex-col items-center text-center">
-              <span className="font-mono text-[10px] tracking-[0.5em] mb-4">ENGINEERING THE FLOW</span>
-              <h2 className="text-5xl md:text-8xl font-bold uppercase tracking-tighter mb-8 italic">4VIAS + B&C SPEAKERS</h2>
-              <p className="max-w-2xl font-mono text-sm leading-tight uppercase font-bold">
-                Elevamos o som a uma forma de arte imersiva. Fidelidade absoluta. Resposta de frequência desenhada para o corpo, não apenas para os ouvidos.
-              </p>
-            </div>
-          </section>
-
-          {/* 03 /// AS LABELS (O QUE FAZEMOS) */}
-          <section className="border-b border-white/10">
-            <div className="p-8 border-b border-white/10">
-               <span className="text-obliqo-red font-mono text-xs tracking-widest block mb-2">02 /// CULTURAL LABELS</span>
-               <h3 className="text-4xl font-bold uppercase tracking-tighter italic">The Ecosystem</h3>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/10">
-               {/* NAPONTA */}
-               <div className="p-12 hover:bg-zinc-950 transition-all group">
-                  <span className="text-obliqo-red text-2xl">✱</span>
-                  <h4 className="text-4xl font-bold uppercase my-6 group-hover:italic transition-all">NAPONTA</h4>
-                  <p className="text-zinc-500 font-mono text-xs leading-relaxed">
-                    Focado na energia do funk e vertentes experimentais. A cultura de periferia encontra a vanguarda eletrônica.
-                  </p>
-               </div>
-               {/* SELECTA */}
-               <div className="p-12 hover:bg-zinc-950 transition-all group">
-                  <span className="text-obliqo-red text-2xl">✱</span>
-                  <h4 className="text-4xl font-bold uppercase my-6 group-hover:italic transition-all">SELECTA</h4>
-                  <p className="text-zinc-500 font-mono text-xs leading-relaxed">
-                    A curadoria fina da house e techno. Onde rituais de pista são conduzidos por seletores nacionais e internacionais.
-                  </p>
-               </div>
-               {/* RADIO GALERIA */}
-               <div className="p-12 hover:bg-zinc-950 transition-all group">
-                  <span className="text-obliqo-red text-2xl">✱</span>
-                  <h4 className="text-4xl font-bold uppercase my-6 group-hover:italic transition-all">RADIO <br/> GALERIA</h4>
-                  <p className="text-zinc-500 font-mono text-xs leading-relaxed">
-                    Plataforma de visibilidade. Um palco dedicado a expor e amplificar o talento de artistas locais e emergentes.
-                  </p>
-               </div>
-            </div>
-          </section>
-
-          {/* 04 /// ARQUIVO VISUAL */}
-          <section className="grid grid-cols-1 md:grid-cols-12 border-b border-white/10">
-            <div className="md:col-span-8 relative h-[600px] bg-zinc-900 overflow-hidden">
-              <Image src="/textures/crowd-hero.jpg" alt="Obliqo Crowd" fill className="object-cover grayscale opacity-50 hover:opacity-100 hover:scale-105 transition-all duration-1000" />
-              <div className="absolute inset-0 bg-gradient-to-r from-black to-transparent"></div>
-              <div className="absolute bottom-12 left-12">
-                <span className="bg-obliqo-red text-black px-2 py-1 font-mono text-[10px] font-bold">ANNIVERSARY_01</span>
-                <h3 className="text-4xl font-bold uppercase mt-4">1 Year of Resistance</h3>
-              </div>
-            </div>
-            <div className="md:col-span-4 p-12 flex flex-col justify-center border-l border-white/10">
-              <p className="text-zinc-400 font-mono text-sm leading-relaxed italic">
-                "Ver Sorocaba novamente no mapa da rota dos grandes artistas em conexão com nossos artistas locais é a prova de que o trabalho coletivo vale a pena."
-              </p>
-            </div>
-          </section>
-
-          {/* 05 /// AGENDA INSTAGRAM */}
-          <section className="py-24 px-6 md:px-12 bg-zinc-950 relative overflow-hidden">
-            <div className="flex flex-col items-center text-center mb-16 relative z-10">
-              <span className="text-obliqo-red font-mono text-xs tracking-[0.5em] uppercase mb-4">Join the Movement</span>
-              <h2 className="text-5xl md:text-8xl font-bold uppercase tracking-tighter">Next Rituals</h2>
-            </div>
-
-            <a 
-              href="https://www.instagram.com/obliqosp" 
-              target="_blank" 
-              className="group relative block w-full border border-white/10 p-12 md:p-24 overflow-hidden transition-all duration-700 hover:border-obliqo-red z-10 bg-black"
-            >
-              <div className="relative z-10 flex flex-col md:flex-row justify-between items-center">
-                <div className="text-center md:text-left">
-                  <h3 className="text-3xl md:text-5xl font-bold uppercase mb-2 group-hover:italic transition-all">Archive & Updates</h3>
-                  <p className="text-zinc-500 font-mono text-sm uppercase tracking-widest">Follow @OBLIQOSP for dates and workshops</p>
-                </div>
-                <div className="mt-8 md:mt-0 text-obliqo-red text-6xl group-hover:scale-110 transition-transform">✱</div>
-              </div>
-            </a>
-
-            {/* Background Decorativo */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.02] pointer-events-none">
-              <span className="text-[40vw] font-bold">✱</span>
-            </div>
-          </section>
-
-          {/* FOOTER */}
-          <footer className="border-t border-white/10 py-24 px-6 md:px-12 flex flex-col gap-12 bg-black overflow-hidden relative">
-             <div className="relative z-10 flex flex-col md:flex-row justify-between items-end">
-               <div className="flex flex-col gap-8">
-                 <div className="flex gap-8 font-bold text-lg md:text-2xl uppercase tracking-tighter">
-                   <a href="#" className="hover:text-obliqo-red">Instagram</a>
-                   <a href="#" className="hover:text-obliqo-red">Soundcloud</a>
-                   <a href="#" className="hover:text-obliqo-red">RA</a>
-                 </div>
-                 <p className="text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
-                   Tilting humans. Tilting visions. Tilting perspectives.
+          {/* 01 /// O LEGADO MOCHAKK (Destaque Visual) */}
+          <section className="grid grid-cols-1 md:grid-cols-12 min-h-screen items-center border-b border-white/5">
+            <div className="md:col-span-6 p-8 md:p-20 relative h-full flex flex-col justify-center">
+               <span className="text-obliqo-red font-mono text-[10px] tracking-widest mb-6 block italic">/// THE GENESIS</span>
+               <h2 className="text-6xl md:text-8xl font-bold uppercase tracking-tighter leading-[0.8] mb-10">
+                 Pedro <br/> Maia's <br/> <span className="text-zinc-800">Vision.</span>
+               </h2>
+               <div className="space-y-8 text-zinc-400 font-mono text-xs md:text-sm leading-relaxed max-w-md">
+                 <p className="border-l border-obliqo-red pl-6">
+                   Inaugurado em 6 de Setembro de 2024, o OBLIQO é a materialização do desejo de Mochakk em retribuir à sua cidade natal. Um espaço dedicado a celebrar, educar e inspirar a comunidade da música eletrônica.
+                 </p>
+                 <p>
+                   A inauguração coincidiu com o lançamento do EP "Locomotiva Ibiza 2099 II", marcando um novo capítulo para Sorocaba na rota global do techno e house.
                  </p>
                </div>
-               <div className="text-right font-mono text-[10px] text-zinc-700">
-                 SOROCABA // BR // 2023-2025 <br/>
-                 OBLIQO CULTURAL SYSTEM ©
+            </div>
+
+            <div className="md:col-span-6 relative h-[70vh] md:h-full overflow-hidden group">
+               <Image src="/textures/img-6.jpg" alt="Mochakk at Obliqo" fill className="object-cover grayscale group-hover:grayscale-0 transition-all duration-[2s] scale-105 group-hover:scale-100" />
+               <div className="absolute inset-0 bg-obliqo-red/10 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity"></div>
+               <div className="absolute top-12 right-12 text-[10px] font-mono rotate-90 origin-right text-white/20">
+                 ARCHIVE_IMG_REF_060924
+               </div>
+            </div>
+          </section>
+
+          {/* 02 /// LABELS & RITUAIS (Interatividade) */}
+          <section className="border-b border-white/5 overflow-hidden">
+            <div className="p-12 border-b border-white/5 flex justify-between items-center bg-zinc-950/50">
+               <h3 className="text-2xl font-bold uppercase italic tracking-tighter italic">Cultural_Ecosystem ✱</h3>
+               <span className="text-[10px] font-mono text-zinc-600">3 ACTIVE PLATFORMS</span>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3">
+               {[
+                 { title: "NAPONTA", desc: "A fusão entre o grave do funk e a vanguarda eletrônica. Onde a rua dita o ritmo.", tag: "EXPERIMENTAL" },
+                 { title: "SELECTA", desc: "A curadoria técnica da casa. Rituais de pista conduzidos por mentes obliquo.", tag: "CURATED" },
+                 { title: "RADIO_G", desc: "Visibilidade para o talento local. A voz da comunidade de Sorocaba.", tag: "COLLECTIVE" }
+               ].map((label, idx) => (
+                 <div key={idx} className="p-16 border-b md:border-b-0 border-white/5 hover:bg-zinc-900 transition-all cursor-crosshair group relative">
+                    <span className="text-zinc-800 text-6xl font-bold absolute top-8 right-8 group-hover:text-obliqo-red/20 transition-colors">0{idx+1}</span>
+                    <h4 className="text-4xl font-bold uppercase mb-8 group-hover:translate-x-2 transition-transform italic">{label.title}</h4>
+                    <p className="text-zinc-500 font-mono text-xs leading-relaxed mb-10">{label.desc}</p>
+                    <span className="text-[9px] font-mono border border-zinc-800 px-2 py-1 text-zinc-700 group-hover:border-obliqo-red group-hover:text-obliqo-red">{label.tag}</span>
+                 </div>
+               ))}
+            </div>
+          </section>
+
+          {/* 03 /// AUDIO ARCHITECTURE (Technical Focus) */}
+          <section className="py-32 px-8 border-b border-white/5 flex flex-col items-center">
+            <div className="max-w-4xl w-full">
+               <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+                 <div className="relative aspect-square w-full bg-zinc-900 border border-white/5 p-12 group">
+                    <div className="absolute inset-4 border border-obliqo-red/20 animate-spin-slow"></div>
+                    <div className="w-full h-full flex items-center justify-center text-8xl text-obliqo-red opacity-20 group-hover:opacity-100 transition-opacity">✱</div>
+                    <div className="absolute bottom-8 left-8 font-mono text-[9px] text-zinc-500">SYSTEM_MODEL: 4VIAS_BC_SPEAKERS</div>
+                 </div>
+                 <div className="space-y-6">
+                    <span className="text-obliqo-red font-mono text-[10px] tracking-[0.4em] uppercase">Audio Engineering</span>
+                    <h3 className="text-5xl font-bold uppercase leading-tight italic">Sonic <br/> Architecture.</h3>
+                    <p className="text-zinc-500 font-mono text-sm leading-relaxed italic">
+                      Equipado com sistemas de som 4VIAS e B&C Speakers, o OBLIQO eleva o som a uma forma de arte. Uma experiência imersiva onde a acústica brutalista encontra a tecnologia de ponta.
+                    </p>
+                 </div>
+               </div>
+            </div>
+          </section>
+
+          {/* 04 /// O CLUBE (Visual imersivo) */}
+          <section className="grid grid-cols-1 md:grid-cols-12 border-b border-white/5 min-h-[80vh]">
+            <div className="md:col-span-7 border-r border-white/5 relative group overflow-hidden">
+               <Image src="/textures/crowd-hero.jpg" alt="Obliqo Crowd" fill className="object-cover opacity-40 grayscale group-hover:opacity-80 transition-all duration-700 scale-110 group-hover:scale-100" />
+               <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+               <div className="absolute bottom-16 left-16">
+                  <span className="text-obliqo-red font-mono text-[10px] tracking-widest block mb-4 italic">ANNIVERSARY_REPORT ///</span>
+                  <h3 className="text-4xl md:text-6xl font-bold uppercase italic">1 Year of <br/> Resistance.</h3>
+               </div>
+            </div>
+            <div className="md:col-span-5 p-12 md:p-20 flex flex-col justify-between bg-zinc-950/30 font-mono">
+               <p className="text-sm text-zinc-400 leading-relaxed italic uppercase">
+                 "Ver Sorocaba novamente no mapa da rota dos grandes artistas em conexão com nossos artistas locais é a prova de que o trabalho coletivo vale a pena."
+               </p>
+               <div className="space-y-4">
+                  <div className="flex justify-between text-[9px] text-zinc-600 border-b border-white/5 pb-2">
+                    <span>SECTOR</span> <span>USINA CULTURAL</span>
+                  </div>
+                  <div className="flex justify-between text-[9px] text-zinc-600 border-b border-white/5 pb-2">
+                    <span>CAPACITY</span> <span>LIMITLESS_SOULS</span>
+                  </div>
+                  <div className="flex justify-between text-[9px] text-zinc-600 border-b border-white/5 pb-2">
+                    <span>MISSION</span> <span>TILTING_VISIONS</span>
+                  </div>
+               </div>
+            </div>
+          </section>
+
+          {/* 05 /// CTAs TÉCNICOS */}
+          <section className="py-40 bg-zinc-950 flex flex-col items-center justify-center relative border-b border-white/5">
+            <div className="text-center mb-16 px-6">
+               <h2 className="text-5xl md:text-9xl font-bold uppercase tracking-tighter italic mb-4">Follow the Ritual.</h2>
+               <p className="font-mono text-[10px] tracking-[0.5em] text-obliqo-red uppercase">Official Archive Updates @obliqosp</p>
+            </div>
+            
+            <a 
+              href="https://www.instagram.com/obliqosp" 
+              target="_blank"
+              className="px-20 py-6 border border-obliqo-red text-obliqo-red font-bold uppercase tracking-[0.4em] text-xs hover:bg-obliqo-red hover:text-black transition-all duration-500 relative overflow-hidden group"
+            >
+              <span className="relative z-10">Access Dossiê</span>
+              <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
+            </a>
+          </section>
+
+          {/* FOOTER BRUTALISTA */}
+          <footer className="py-20 px-8 flex flex-col md:flex-row justify-between items-end gap-12 bg-black">
+             <div className="flex flex-col gap-6">
+               <div className="text-obliqo-red text-5xl animate-spin-slow">✱</div>
+               <div className="flex gap-8 text-[10px] font-mono font-bold uppercase tracking-widest text-zinc-600 italic">
+                 <a href="#" className="hover:text-white">Instagram</a>
+                 <a href="#" className="hover:text-white">Soundcloud</a>
+                 <a href="#" className="hover:text-white">Email</a>
                </div>
              </div>
              
-             <div className="absolute bottom-0 left-0 w-full overflow-hidden pointer-events-none select-none opacity-5 flex justify-center">
-                <h1 className="text-[25vw] leading-[0.7] font-bold tracking-tighter text-white translate-y-1/4">OBLIQO</h1>
+             <div className="text-right">
+                <h1 className="text-8xl font-bold tracking-tighter text-zinc-900 select-none">OBLIQO</h1>
+                <p className="text-[9px] font-mono text-zinc-700 mt-2">© 2023-2026 CULTURAL_SYSTEM_SOROCABA_BR</p>
              </div>
           </footer>
+
         </div>
       </div>
     </main>
