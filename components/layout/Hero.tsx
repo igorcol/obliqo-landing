@@ -16,7 +16,7 @@ export default function Hero() {
         
         <div className="absolute inset-0 z-0 opacity-[0.07] grayscale contrast-125 group-hover:opacity-15 transition-opacity duration-[2s]">
            <Image 
-             src="/imagens/ceiling-lights.jpg" 
+             src="/images/ceiling-lights.jpg" 
              alt="System Atmosphere" fill className="object-cover scale-110 group-hover:scale-100 transition-transform duration-[10s]"
            />
         </div>
@@ -52,7 +52,7 @@ export default function Hero() {
         
         <div className="flex-1 border-b border-white/5 relative group overflow-hidden">
           <Image 
-            src="/imagens/dj-red.jpg" 
+            src="/images/dj-red.jpg" 
             alt="Mochakk Detail" 
             fill className="object-cover grayscale contrast-150 opacity-20 group-hover:opacity-70 group-hover:scale-105 transition-all duration-[3s]"
           />

@@ -52,7 +52,7 @@ export default function YearOneResistance() {
           {/* Imagem Hero da Pista */}
           <div className="relative h-[60vh] md:h-[70vh] overflow-hidden group">
             <Image 
-              src="/imagens/crowd-hero.jpg" 
+              src="/images/crowd-hero.jpg" 
               alt="Anniversary Crowd" 
               fill 
               className="object-cover grayscale group-hover:grayscale-0 contrast-125 transition-all duration-[2s] scale-105 group-hover:scale-100" 

@@ -5,19 +5,19 @@ const LABELS = [
     title: "NAPONTA",
     desc: "Onde o grave de rua colide com a vanguarda. Pesquisa sonora focada no funk e em frequências experimentais que desafiam o padrão.",
     tag: "BPM_RESEARCH",
-    img: "/imagens/img-4.jpg",
+    img: "/images/img-4.jpg",
   },
   {
     title: "SELECTA",
     desc: "Purismo e técnica. Uma curadoria rigorosa de house e techno, entregando rituais de pista desenhados para a imersão absoluta.",
     tag: "HIGH_FIDELITY",
-    img: "/imagens/ceiling-lights.jpg",
+    img: "/images/ceiling-lights.jpg",
   },
   {
     title: "RADIO GALERIA",
     desc: "Plataforma de amplificação. Um palco dedicado a expor a nova safra de artistas locais e fortalecer o ecossistema cultural de Sorocaba.",
     tag: "OPEN_SOURCE",
-    img: "/imagens/crowd-hero.jpg",
+    img: "/images/crowd-hero.jpg",
   },
 ];
 

@@ -26,7 +26,7 @@ export default function TheGenesis() {
       {/* Coluna de Imagem / Arquivo */}
       <div className="md:col-span-6 relative h-[70vh] md:h-full overflow-hidden group">
         <Image
-          src="/imagens/img-6.jpg"
+          src="/images/img-6.jpg"
           alt="Mochakk at Obliqo"
           fill
           className="object-cover grayscale group-hover:grayscale-0 transition-all duration-[2s] scale-105 group-hover:scale-100"
