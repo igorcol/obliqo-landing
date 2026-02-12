@@ -1,14 +1,19 @@
-/* eslint-disable react/jsx-no-comment-textnodes */
+"use client";
+
 import Image from "next/image";
 
 export default function Hero() {
+  const bars = Array.from({ length: 32 }, (_, i) => ({
+    height: ((i * 13) % 60) + 20, // Altura mínima de 20% e máxima de 80%
+    delay: i * 0.1,
+  }));
+
   return (
     <section className="relative h-screen w-full bg-black overflow-hidden flex flex-col md:grid md:grid-cols-12 border-b border-white/10">
       
       {/* --- COLUNA ESQUERDA: THE MAIN ANCHOR --- */}
       <div className="md:col-span-8 relative flex flex-col justify-end p-6 md:p-20 border-r border-white/5 group">
         
-        {/* Camada de Fundo Localizada com Filtro de Grão Profundo */}
         <div className="absolute inset-0 z-0 opacity-[0.07] grayscale contrast-125 group-hover:opacity-15 transition-opacity duration-[2s]">
            <Image 
              src="/textures/ceiling-lights.jpg" 
@@ -16,27 +21,25 @@ export default function Hero() {
            />
         </div>
 
-        {/* Linha de Scanner Animada (Efeito Laser) */}
-        <div className="absolute top-0 left-0 w-full h-[1px] bg-obliqo-red/40 shadow-[0_0_20px_rgba(255,0,0,0.8)] z-20 animate-scan pointer-events-none"></div>
+        <div className="absolute top-0 left-0 w-full h-px bg-obliqo-red/40 shadow-[0_0_20px_rgba(255,0,0,0.8)] z-20 animate-scan pointer-events-none"></div>
 
         <div className="relative z-30">
           <div className="flex items-center gap-6 mb-12">
             <span className="text-obliqo-red text-5xl animate-spin-slow select-none cursor-crosshair">✱</span>
-            <div className="h-px w-32 bg-gradient-to-r from-obliqo-red/60 to-transparent"></div>
+            <div className="h-px w-32 bg-linear-to-r from-obliqo-red/60 to-transparent"></div>
             <div className="flex flex-col">
               <span className="font-mono text-[8px] tracking-[0.6em] text-zinc-600 uppercase">Status</span>
               <span className="font-mono text-[10px] tracking-[0.4em] text-obliqo-red uppercase animate-pulse">System_Live_Active</span>
             </div>
           </div>
 
-          {/* TÍTULO EM LINHA ÚNICA: Preparado para futura substituição por Logo PNG */}
           <h1 className="text-[14vw] md:text-[11vw] font-black leading-none tracking-[-0.08em] uppercase italic mix-blend-difference whitespace-nowrap">
             OBLIQO
           </h1>
 
           <div className="mt-12 max-w-lg border-l-2 border-obliqo-red pl-8 py-2">
             <p className="font-mono text-[10px] md:text-[12px] text-zinc-500 leading-relaxed uppercase tracking-[0.3em] italic">
-              "Create the future instead of predicting it." <br/>
+              &quot;Create the future instead of predicting it.&quot; <br/>
               A perspective shift in sound and culture. <br/>
               Tilting humans // Tilting visions // Tilting perspectives.
             </p>
@@ -45,9 +48,8 @@ export default function Hero() {
       </div>
 
       {/* --- COLUNA DIREITA: THE CORE ENGINE --- */}
-      <div className="md:col-span-4 relative flex flex-col bg-[#050505]">
+      <div className="md:col-span-4 relative flex flex-col bg-obliqo-black">
         
-        {/* Bloco Superior: Visual Report */}
         <div className="flex-1 border-b border-white/5 relative group overflow-hidden">
           <Image 
             src="/textures/dj-red.jpg" 
@@ -60,17 +62,26 @@ export default function Hero() {
           </div>
           
           <div className="absolute bottom-6 left-6 font-mono text-[8px] tracking-[0.5em] text-white/30 uppercase bg-black/60 backdrop-blur-sm p-3 border border-white/5">
-            Ref_Archive: P_Maia // 2026
+            Ref_Archive: // 2026
           </div>
         </div>
 
         {/* Bloco Inferior: Data HUD */}
         <div className="h-2/5 p-10 flex flex-col justify-between bg-zinc-950 font-mono text-[9px] tracking-[0.4em] uppercase relative overflow-hidden">
           
-          <div className="absolute top-0 left-0 w-full h-[1px] bg-white/5"></div>
-          <div className="absolute bottom-0 left-0 w-full h-16 flex items-end gap-[2px] px-6 opacity-20 group-hover:opacity-40 transition-opacity">
-             {[...Array(32)].map((_, i) => (
-               <div key={i} className="flex-1 bg-obliqo-red animate-pulse" style={{ height: `${Math.random() * 80}%`, animationDelay: `${i * 0.1}s` }}></div>
+          <div className="absolute top-0 left-0 w-full h-px bg-white/5"></div>
+          
+          {/* Waveform 100% Pura e Idempotente */}
+          <div className="absolute bottom-0 left-0 w-full h-16 flex items-end gap-0.5 px-6 opacity-20 group-hover:opacity-40 transition-opacity">
+             {bars.map((bar, i) => (
+               <div 
+                 key={i} 
+                 className="flex-1 bg-obliqo-red animate-pulse" 
+                 style={{ 
+                    height: `${bar.height}%`, 
+                    animationDelay: `${bar.delay}s` 
+                 }}
+               ></div>
              ))}
           </div>
 
