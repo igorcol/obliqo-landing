@@ -90,3 +90,11 @@ h1 {
   80% { transform: translate(2px, -2px); }
   100% { transform: translate(0); }
 }
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spin-slow 12s linear infinite;
+}
